@@ -3,9 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AtmComponent } from './atm/atm.component';
 import { TellerComponent } from './teller/teller.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
+
   { path: '', redirectTo: 'atm', pathMatch: 'full' },
+  {path: 'atm', component: AtmComponent, pathMatch: 'full'},
+  {path: 'teller', component: TellerComponent, pathMatch: 'full'},
+  {path: 'contact', component: ContactComponent}
 ];
 
 export const router: ModuleWithProviders = RouterModule.forRoot(routes);
