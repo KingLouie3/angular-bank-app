@@ -7,16 +7,8 @@ import { BankService } from '../bank.service';
   styleUrls: ['./atm.component.css']
 })
 export class AtmComponent {
-value;
 
-withdraw() {
-  this.bank.account.balance -= this.value
-};
-  constructor(public bank: BankService) { 
-
-  }
+  constructor(public bank: BankService, ) {  }
 
 
-
-  }
-
+}

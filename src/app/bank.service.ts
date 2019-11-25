@@ -4,15 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BankService {
-
+amount: any = '';
   constructor() {
     
    }
-
    account: any = {
-    fname: 'first name',
-    lname: 'last name',
-    age: 0,
+    fname: 'Lou',
+    lname: 'Sutton',
+    age: 26,
     address: {
       street: '1234 street st',
       city: 'city',
@@ -20,14 +19,15 @@ export class BankService {
       zip: 12345,
       country: 'canada'
     },
-    balance: 0.01,
+    balance: 100.00,
     currency: 'usd',
     transactions: [
       {
         date: '01-01-01',
         type: 'withdrawal',
         amount: 200.00,
-        currency: 'usd'
+        currency: 'usd',
+       
       },
       {
         date: '02-02-02',
@@ -41,6 +41,55 @@ export class BankService {
         amount: 2.00,
         currency: 'usd'
       }
+      
+      
+
+
+      
     ]
+   };
+   withdraw() {
+    let withDrawnAmount = this.amount;
+    let myBalance = this.account.balance;
+    let dt = new Date();
+    const newBalance = myBalance - withDrawnAmount
+    this.account.balance = newBalance;
+    this.account.transactions.unshift({
+      date:"[" + dt.getDate() + "-" + (dt.getMonth()+ 1) + "-" + dt.getFullYear() + "]",
+      type:'WithDrawal',
+      amount: withDrawnAmount,
+      currency: 'usd'
+      })  
+      console.log(this.account.transactions);
   };
-}
+  
+  deposit() {
+    let DepositAmount = this.amount;
+    let myBalance = this.account.balance;
+    let dt = new Date();
+  
+    const newBalance = myBalance + DepositAmount
+    this.account.balance = newBalance;this.account.transactions.unshift({
+      date: dt.getDate() + " " + dt.getMonth() + " " + dt.getFullYear(),
+      type:'deposit',
+      amount: DepositAmount,
+      currency: 'usd'
+    
+    })
+    console.log(this.account.transactions);
+  
+  }
+  
+  balanceInquiry() {
+  
+  console.log(this.account.transactions);
+  }
+  
+  transactionsHistory() {
+  let  ListofTrans = this
+  }
+  
+  
+   
+   }; 
+

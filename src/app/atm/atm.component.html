@@ -2,21 +2,23 @@
 <div class="main">
   <section class="display">
     > Welcome, Henry!
-    <!-- Display Feedback information here -->
+    <h1>Balance: {{bank.account.balance}}</h1>
+    <h1></h1>
+    <h1></h1> 
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
-    <input type="number" [(ngModel)]= value>
+    <input type="number" [(ngModel)]= "bank.amount">
 
     <ul class="options-list">
       <li class="options-item">
-        <button onclick="withdraw()">Make a Widthdrawl</button>
+        <button (click)="bank.withdraw()">Make a Widthdrawl</button>
       </li>
       <li class="options-item">
-          <button>Deposit Money</button>
+          <button (click)="bank.deposit()">Deposit Money</button>
       </li>
       <li class="options-item">
-        <button>Balance Inquiry</button>
+        <button (click)="bank.balanceInquiry()">Balance Inquiry</button>
       </li>
       <li class="options-item">
         <button>Transactions History</button>
