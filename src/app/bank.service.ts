@@ -56,9 +56,9 @@ amount: any = '';
     this.account.balance = newBalance;
     this.account.transactions.unshift({
       date:"[" + dt.getDate() + "-" + (dt.getMonth()+ 1) + "-" + dt.getFullYear() + "]",
-      type:'WithDrawal',
+      type:'Withdrawal',
       amount: withDrawnAmount,
-      currency: 'usd'
+      currency: 'USD'
       })  
       console.log(this.account.transactions);
   };
@@ -70,10 +70,10 @@ amount: any = '';
   
     const newBalance = myBalance + DepositAmount
     this.account.balance = newBalance;this.account.transactions.unshift({
-      date: dt.getDate() + " " + dt.getMonth() + " " + dt.getFullYear(),
-      type:'deposit',
+      date:"[" + dt.getDate() + "-" + (dt.getMonth() + 1) + "-" + dt.getFullYear() + "]",
+      type:'Deposit',
       amount: DepositAmount,
-      currency: 'usd'
+      currency: 'USD'
     
     })
     console.log(this.account.transactions);

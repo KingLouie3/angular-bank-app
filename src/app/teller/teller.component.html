@@ -12,9 +12,9 @@
     <br><br>
     <!-- Display: if inquiring about transactions -->
     <h3>Last 3 Transactions</h3>
-    <p>{{this.bank.account.transactions[0].date}} -  Deposit ($20 USD)</p>
-    <p>[01-01-2018] -  Withdrawal ($40 USD)</p>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
+    <p>{{this.bank.account.transactions[0].date}} -  {{this.bank.account.transactions[0].type}} ${{this.bank.account.transactions[0].amount}}</p>
+    <p>{{this.bank.account.transactions[1].date}} -  {{this.bank.account.transactions[1].type}} ${{this.bank.account.transactions[1].amount}}</p>
+    <p>{{this.bank.account.transactions[2].date}} -  {{this.bank.account.transactions[2].type}} {{this.bank.account.transactions[2].amount}}</p>
   </section>
   <aside class="options">
     <section class="balance">
